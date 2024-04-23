@@ -17,6 +17,8 @@ import yaml
 
 from src.common_angle import D2R, R2D
 from src.kf_gins_kf_gins_type import GINSOptions
+from src.fileio_gnssfileloader import GnssFileLoader
+from src.fileio_imufileloader import ImuFileLoader
 
 
 
@@ -34,7 +36,7 @@ def main():
     # 读取文件路径配置
     # load filepath configuration
     imupath = config["imupath"]
-    gnsspath = comfig["gnsspath"]
+    gnsspath = config["gnsspath"]
     outputpath = config["outputpath"]
 
     # imu数据配置 数据处理区间
@@ -43,10 +45,33 @@ def main():
     imudatarate = int(config["imudatarate"])
     starttime = float(config["starttime"])
     endtime = float(config["endtime"])
+    # 开始时间是456300 GNSS数据和IMU数据里的起始各不相同 因而接下来需要一个数据对其过程
 
-    # 加载GNSS文件和IMU文件
+    # 加载GNSS文件和IMU文件 (此部分尚未定义)
     # load GNSS file and IMU file
+    gnssfile = GnssFileLoader(gnsspath)
+    imufile = ImuFileLoader(imupath, imudatalen, imudatarate)
+
+    # 构造GIEngine (此部分尚未定义)
+    giengine = GIEngine(options)    
+
+
+    # 检查文件是否打开
+    # if(gnssfile.isOpen() or imufile.isOpen() or navfile.isOpen() or imuerrfile.isOpen() or stdfile.isOpen()):
+    #     print("Failed to open data file!")
+    # 先搭个能跑起来的框架 细节先不管了
+
+    # 检查处理时间
+    if(endtime<0):
+        endtime = imufile.endtime()
+    if(endtime > 604800 or starttime < imufile.satarttime() or starttime > endtime):
+        print("Process Time Error !!")
+
+    # 数据对齐
+    # Data Alignment
+
     
+
     options.print_options()
 
 def loadConfig(config, options):    ##options的类需要定义
