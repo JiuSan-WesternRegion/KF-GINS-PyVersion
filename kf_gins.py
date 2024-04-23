@@ -1,5 +1,5 @@
 # KF-GINS-PythonVersion
-# Author : Jing Wang (jingwang.ac@hotmail.com)
+# Author : JiuSan-WesternRegion
 
 # An EKF-Based GNSS/INS Integrated Navigation System
 # The raw software is from i2Nav Group, Wuhan University
