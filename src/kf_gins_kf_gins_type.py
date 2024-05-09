@@ -6,20 +6,20 @@ from src.common_angle import R2D
 
 
 class Attitude:
-    qbn: np.quaternion
-    cbn: np.array
-    euler: np.array
-    # def __init__(self, qbn, cbn, euler):
-    #     self.qbn = qbn      #np.quaterniond
-    #     self.cbn = cbn      #np.array   matrix3d
-    #     self.euler = euler  #np.array   vector3d    默认列向量
+    # qbn: np.quaternion
+    # cbn: np.array
+    # euler: np.array
+    def __init__(self, qbn, cbn, euler):
+        self.qbn = np.quaterniond      #np.quaterniond
+        self.cbn = np.array      #np.array   matrix3d
+        self.euler = np.array  #np.array   vector3d    默认列向量
 
 class PVA:
-    pos: np.array
-    vel: np.array
-    # def __init__(self, pos, vel):
-    #     self.pos = pos      #np.array   vector3d
-    #     self.vel = vel      #np.array   vector3d
+    # pos: np.array
+    # vel: np.array
+    def __init__(self, pos, vel):
+        self.pos = np.array      #np.array   vector3d
+        self.vel = np.array      #np.array   vector3d
 
 class ImuError:
     # gyrbias: np.array
