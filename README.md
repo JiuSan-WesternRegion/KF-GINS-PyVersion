@@ -9,3 +9,4 @@ Due to the requirement that I will carry out the Deep Learning-based navigation 
 + **[2024.04.16/17]** The transplanting of the *kf_gins_type* file and the *loadConfig()* method in *kf_gins* file was completed. The git of KF-GINS-PyVersion will be uploaded after the new laptop PC (HUAWEI Matebook X Pro 2024, ૮(˶ᵔ ᵕ ᵔ˶)ა) arrives. 
 + **[2024.04.22]** The transplanting of *gnssfileloader* and *imufileloader* files was completed, but incomplete.
 + **[2024.04.22-Now]** 不装Der了，还是用中文了。近日忙于学位事宜和修养身体，暂时先不学了。
++ **[2024.05.09]** Learning the Eigen Lib and the basic knowledge of EulerAngle, Quaternion, CoordinateSystem and others.
